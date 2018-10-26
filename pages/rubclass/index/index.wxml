@@ -1,0 +1,27 @@
+<!--pages/rubclass/index/index.wxml-->
+<view class='rubclass_list'>
+  <view class='header'>
+    <view class='search'>
+      <icon type='search' size='18'></icon>
+      <input bindinput="setkeywords" bindconfirm="getlist" value='{{keysword}}'></input>
+    </view>
+    <view class='type'>
+      <text data-type="0" style="color:{{type=='0'?'#ffffff':'#999999'}};background:{{type=='0'?'#85BBEE':'#F6F6F6'}}" bindtap='changetype'>全部</text>
+      <text data-type="1" style="color:{{type=='1'?'#ffffff':'#999999'}};background:{{type=='1'?'#85BBEE':'#F6F6F6'}}" bindtap='changetype'>公益课</text>
+      <text data-type="2" style="color:{{type=='2'?'#ffffff':'#999999'}};background:{{type=='2'?'#85BBEE':'#F6F6F6'}}" bindtap='changetype'>精品课</text>
+      <!-- <text data-type="2" style="color:{{type==2?'#ffffff':'#999999'}};background:{{type==2?'#85BBEE':'#F6F6F6'}}" bindtap='changetype'>高峰论坛</text> -->
+    </view>
+  </view>
+  <view class='content'>
+    <block wx:for="{{info.activity}}" wx:key="">
+      <navigator class='op' url='../detail/detail?id={{item.id}}'>
+        <image src='{{item.cover}}' style='width:100%;height:200rpx' mode='aspectFit'></image>
+        <view class='onerow' style='font-size:35rpx;'>{{item.actname}}</view>
+        <view class='onerow' style='color:#666666'>{{item.keywords}}</view>
+        <text style='color:#E4593F'>{{item.money}}</text>
+        <view class='btn' wx:if="{{item.category!=0}}">{{item.myenter==0?'报名':'已报名'}}</view>
+      </navigator>
+    </block>
+    <view wx:if="{{info.activity==''}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无课程</view>
+  </view>
+</view>

@@ -1,0 +1,227 @@
+/* pages/fieldView/detail/detail.wxss */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.fieldView_detail {
+  font-size: 35rpx;
+  padding-bottom: 150rpx;
+}
+
+.fieldView_detail .info {
+  padding: 30rpx;
+  border-bottom: solid #f2f2f2 15rpx;
+}
+
+.info .article_info {
+}
+
+.article_info .title {
+  color: #333;
+  font-weight: bold;
+}
+
+.article_info .count {
+  font-size: 28rpx;
+  color: #666;
+  padding: 25rpx 0;
+}
+
+.count .flex-center {
+  margin-left: 30rpx;
+}
+
+.count image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.info .author_info {
+  font-size: 28rpx;
+  border-bottom: solid #f2f2f2 1rpx;
+  padding-bottom: 25rpx;
+}
+
+.author_info  image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: block;
+  margin-right: 20rpx;
+}
+
+.author_info .addr {
+  color: #666;
+}
+
+.info .article_content {
+  color: #666;
+  font-size: 30rpx;
+  padding: 25rpx 0 0;
+}
+
+.article_content .praise {
+  font-size: 35rpx;
+  color: #666;
+  text-align: center;
+  margin: 40rpx 20rpx 0;
+  position: relative;
+}
+
+.praise .line-row {
+  height: 1rpx;
+  width: 100%;
+  background: #4e96d9;
+  position: absolute;
+  top: 38rpx;
+  z-index: -1;
+}
+
+.praise .cont {
+  display: inline-block;
+  background: white;
+  padding: 15rpx 30rpx;
+}
+
+.cont navigator {
+  color: white;
+  background: #4e96d9;
+  padding: 3rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.fieldView_detail .comment {
+  padding: 30rpx;
+}
+
+.comment .titlebar {
+  color: #333;
+  font-weight: bold;
+}
+
+.comment .part {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.part image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  display: block;
+}
+
+.comment .text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  padding: 5rpx 0 20rpx;
+  border-bottom: solid #f2f2f2 1rpx;
+}
+
+.text .content {
+  padding: 15rpx 0;
+  color: #666;
+}
+
+.text .reply {
+  background: #f2f2f2;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.reply .name {
+  color: #4e96d9;
+}
+
+.text image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2rpx 2rpx #eee;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+.tabbar image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+  display: block;
+}
+
+.collection image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tabbar input {
+  margin-left: 20rpx;
+}
+
+.tabbar .release {
+  background: #f2f2f2;
+  border-radius: 50rpx;
+  padding: 10rpx 40rpx 10rpx 10rpx;
+}
+
+.mark {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.2;
+  z-index: 99;
+}
+
+.reply_popup {
+  position: fixed;
+  padding: 30rpx 30rpx 20rpx;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  margin-left: -30rpx;
+  background: white;
+  border-radius: 20rpx;
+  z-index: 199;
+  font-size: 30rpx;
+}
+
+.reply_popup textarea {
+  height: 110rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rpx 20rpx;
+  border: solid 1rpx #f2f2f2;
+}
+
+.reply_popup .reply {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.reply_popup text {
+  padding: 5rpx 20rpx;
+  background: #4e96d9;
+  color: white; 
+  border-radius: 10rpx;
+}

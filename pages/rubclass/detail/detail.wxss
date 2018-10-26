@@ -1,0 +1,208 @@
+/* pages/rubclass/detail/detail.wxss */
+
+.rubclass_detail {
+  font-size: 35rpx;
+}
+
+.rubclass_detail .info {
+}
+
+.info  image {
+  display: block;
+  width: 100%;
+}
+
+.info .text {
+  padding: 20rpx 30rpx 30rpx;
+}
+
+.text .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text .point {
+  font-size: 30rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.point text:nth-child(3) {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.point .time {
+  padding: 0 15rpx;
+  margin: 0 15rpx;
+  border-left: solid 1rpx #666;
+  border-right: solid 1rpx #666;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+.text .count {
+  margin-top: 20rpx;
+}
+
+.count .price {
+  color: #e4593f;
+}
+
+.count .num {
+  color: #666;
+  float: right;
+}
+
+.rubclass_detail .tab {
+  display: flex;
+  text-align: center;
+  border-top: solid 10rpx #f2f2f2;
+  padding: 20rpx 0;
+  width: 100%;
+}
+
+.tab .part {
+  flex: 1;
+}
+
+.part .text {
+  border-left: solid 2rpx #333;
+}
+
+.part .act {
+  content: "";
+  display: block;
+  height: 12rpx;
+  width: 12rpx;
+  border-radius: 50%;
+  background: #4e96d9;
+  margin: 5rpx auto;
+}
+
+.rubclass_detail .content {
+  padding: 0 30rpx 130rpx;
+}
+
+.content .introduce, .courselist {
+  padding: 0 30rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.content .lecturer {
+  padding: 0 30rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.rubclass_detail .navbtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background: white;
+  display: flex;
+  align-items: stretch;
+  text-align: center;
+  color: #666;
+}
+
+.navbtn .nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4e96d9;
+  color: white;
+}
+
+/* .navbtn .nav:nth-child(2) {
+  background: #4e96d9;
+  color: white;
+} */
+
+.nav image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+
+.mark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 111;
+  background: #000;
+  opacity: 0.3;
+}
+
+.modle {
+  position: fixed;
+  top: 32%;
+  left: 15%;
+  width: 70%;
+  height: 36%;
+  background: white;
+  z-index: 222;
+  border-radius: 10rpx;
+  font-size: 35rpx;
+}
+
+.modle .title {
+  height: 12%;
+  padding: 2% 0;
+  margin: 0 30rpx 1%;
+  border-bottom: solid 1rpx #cdcdcd;
+  position: relative;
+}
+
+.title .close {
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+  color: #999;
+  font-size: 32rpx;
+  text-align: right;
+  width: 40rpx;
+}
+
+.modle .op {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  padding: 2.5% 40rpx;
+}
+
+.op input {
+  flex: 1;
+  border: solid 1rpx #cdcdcd;
+  padding: 0 10rpx;
+}
+
+.op text {
+  width: 25%;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.modle button {
+  height: 14%;
+  margin-top: 2%;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  background: #4e96d9;
+  color: white;
+  width: 25%;
+}
+
+button::after {
+  border: none;
+}

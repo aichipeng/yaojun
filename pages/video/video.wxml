@@ -1,0 +1,5 @@
+<!--pages/video/video.wxml-->
+<view>
+  <video src='{{videoInfo.oss_scr||videoInfo.local_scr}}' page-gesture='true' style='width:100%;' bindtimeupdate="timeupdate" bindpause="recordAdd" initial-time="{{videoInfo.endtimes}}"></video>
+  <!-- <view style='text-align:center' bindtap='courseLike'>点赞</view> -->
+</view>

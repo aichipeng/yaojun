@@ -1,0 +1,161 @@
+<!--pages/lecturer/detail/detail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='lecturer_detail'>
+ <image src='{{img_bg}}' style='position:absolute;top:0;left:0;right:0;z-index:-1;height:370rpx;width:100%'></image>
+  <view class='background'>
+    <view class='card'>
+      <view class='info'>
+        <image src='{{info.logo}}'></image>
+        <view class='text'>
+          <view>{{info.realname}}</view>
+          <view class='lable'>
+            <text>{{info.is_star==1?'讲师':'咨询师'}}</text>
+            <text>尧君认证</text>
+            <text>{{area_id[0]}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='count'>
+        <view class='op'>
+          <view>{{info.fellow}}</view>
+          <view class='name'>关注</view>
+        </view>
+        <view class='op'>
+          <view>{{info.course.count}}</view>
+          <view class='name'>课程</view>
+        </view>
+        <view class='op'>
+          <view>{{info.article.count}}</view>
+          <view class='name'>文章</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='tab'>
+    <view class='part'>
+      <view class='text' data-tid="1" bindtap='changetid' style='border-left:none;  color:{{tid==1?"#4e96d9":""}};'>讲师介绍</view>
+      <view class='{{tid==1?"act":""}}'></view>
+    </view>
+    <view class='part'>
+      <view class='text' data-tid="2" bindtap='changetid' style='color:{{tid==2?"#4e96d9":""}};'>讲师课程</view>
+      <view class='{{tid==2?"act":""}}'></view>
+    </view>
+    <view class='part'>
+      <view class='text' data-tid="3" bindtap='changetid' style='color:{{tid==3?"#4e96d9":""}};'>讲师文章</view>
+      <view class='{{tid==3?"act":""}}'></view>
+    </view>
+    <view class='part'>
+      <view class='text' data-tid="4" bindtap='changetid' style='color:{{tid==4?"#4e96d9":""}};'>评价</view>
+      <view class='{{tid==4?"act":""}}'></view>
+    </view>
+  </view>
+  <view class='content'>
+    <block wx:if="{{tid==1}}">
+      <view class='introduce'>
+        <view class='titlebar'>简介</view>
+        <view class='describe'>
+          <view wx:if="{{info.education==null}}">暂无简介</view>
+          <block wx:else>
+            <template is="wxParse" data="{{wxParseData:introduce.nodes}}" />
+          </block>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{tid==2}}">
+      <view class='courselist'>
+        <block wx:for="{{info.course.list}}" wx:key="">
+          <navigator class='course' url='../../detail/detail?id={{item.id}}'>
+            <image src='{{item.logo}}' mode='aspectFit'></image>
+            <view class='text'>
+              <view class='title'>{{item.name}}</view>
+              <view class='count'>{{item.buys}}已购</view>
+              <view class='price'>{{item.price}}</view>
+            </view>
+          </navigator>
+        </block>
+        <view wx:if="{{info.course.list==''}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无课程</view>
+      </view>
+    </block>
+    <block wx:if="{{tid==3}}">
+      <view class='articlelist'>
+        <block wx:for="{{info.article.list}}" wx:key="">
+          <navigator class='article' url='../../fieldview/detail/detail?id={{item.id}}'>
+            <image src='{{item.author}}' mode='aspectFit'></image>
+            <view class='text'>
+              <view class='article'>
+                <view class='text title'>{{item.title}}</view>
+                <view style='width:22%; text-align:right'>{{item.create_time}}</view>
+              </view>
+              <view class='description'>{{item.description}}</view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+      <view wx:if="{{info.article.list==''}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无文章</view>
+    </block>
+    <block wx:if="{{tid==4}}">
+      <view class='commentlist'>
+        <block wx:for="{{comment.common}}" wx:key="">
+          <view class='comment'>
+            <image src='{{item.avatar}}'></image>
+            <view class='text'>
+              <view class='comment'>
+                <view class='text title'>{{item.realname}}</view>
+                <view>{{item.add_time}}</view>
+              </view>
+              <view bindtap='showPopup' data-pid="{{item.id}}">{{item.content}}</view>
+              <view class='reply' wx:if="{{item.children&&item.children!=''}}">
+                <block wx:for="{{item.children}}" wx:key="{{index}}" wx:for-item='val'>
+                  <view>
+                    <text class='name'>{{val.realname}}<text wx:if="{{val.realname!=val.username}}">回复</text>：</text>
+                    <text bindtap='showPopup' data-pid="{{val.pid}}" data-p_pid="{{val.id}}">{{val.content}}</text>
+                  </view>
+                </block>
+              </view>
+              <!-- <view class='theme'>来自
+                <text style='color:;'>{{item.themename}}</text>
+              </view> -->
+            </view>
+          </view>
+        </block>
+      </view>
+       <view wx:if="{{comment.common==''}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无评价</view>
+    </block>
+  </view>
+  <block wx:if="{{tid==4}}">
+    <view class='tabbar flex-center'>
+      <view class='release flex_1 flex-center'>
+        <image src='../../../images/1.png' mode='aspectFit'></image>
+        <input placeholder='发布评论...' class='flex_1' bindconfirm='addcommit' value='{{commit}}' cursor-spacing="20"></input>
+      </view>
+      <view class='collection' bindtap='fellow'>
+        <image src="../../../images/12{{info.focu==0?'':'_1'}}.png" mode='aspectFit'></image>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='navbtn'>
+      <view class='nav' bindtap='fellow'>
+        <image src="../../../images/12{{info.focu==0?'':'_1'}}.png" mode='aspectFit'></image>
+        <text>{{info.focu==0?'关注':'取关'}}</text>
+      </view>
+      <!-- <navigator class='nav' url='../order/order?id={{info.id}}&type=1'>
+        <image src='../../../images/13.png' mode='aspectFit'></image>
+        <text>提问</text>
+      </navigator> -->
+      <navigator class='nav' url='../order/order?id={{info.id}}'>
+        <text>立即预约</text>
+      </navigator>
+    </view>
+  </block>
+</view>
+
+
+<!-- 回复弹窗 -->
+<view class='mark' bindtap='hidepopup' wx:if="{{reply==true}}" bindtap='hidePopup'></view>
+<view class='reply_popup' wx:if="{{reply==true}}">
+  <textarea placeholder='回复...' bindinput="setcommit" fixed='true' cursor-spacing='100'></textarea>
+  <view class='reply'>
+    <text bindtap='addcommit' data-pid="{{pid}}" data-p_pid="{{p_pid}}">回复</text>
+  </view>
+</view>

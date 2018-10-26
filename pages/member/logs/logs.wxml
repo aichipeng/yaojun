@@ -1,0 +1,55 @@
+<!--pages/member/logs/logs.wxml-->
+<view class='notes'>
+  <view class='header-nav'>
+    <block wx:for="{{headerNav}}" wx:key="{{index}}">
+      <view class='part' data-tp="{{item.tp}}" bindtap='changetp' style="color:{{tp==item.tp?'#4E96D9':'#333333'}};border-bottom:solid {{tp==item.tp?'#4E96D9 5rpx':'#f2f2f2 1rpx'}}">{{item.name}}</view>
+    </block>
+  </view>
+  <block wx:if="{{tp=='1'}}">
+    <view wx:if="{{info.download==''}}" style='text-align:center;margin-top:30rpx;'>暂无下载</view>
+    <view wx:else style='text-align:center;margin-top:30rpx;'>暂无下载</view>
+  </block>
+
+  <block wx:if="{{tp=='2'}}">
+    <view wx:if="{{info.reprint==''}}" style='text-align:center;margin-top:30rpx;'>暂无转载</view>
+    <view wx:else class='content-list'>
+      <block wx:for="{{info.reprint}}" wx:key="{{index}} ">
+        <view class='reply' bindtap='goDetail' data-id="{{item.themeid}}" data-tp="{{item.type}}">
+          <view class='replyuser'>
+            <image src='{{item.avatar}}'></image>
+            <text class='flex-1'> {{item.realname}}</text>
+            <text>转发时间：{{item.createtime}}</text>
+          </view>
+          <view class='content'><text>{{item.type=='1'?'课程':item.type=='2'?'文章':item.type=='3'?'公益课':item.type=='4'?'资料':''}}</text>
+          {{item.theme.title}}</view>
+          <view class='from'>{{item.theme.description}}</view>
+          <view class='mycomment'>
+            <text> 评论：{{item.theme.commentnum}} </text>
+            <text> 收藏：{{item.theme.collection}} </text>
+            <text> 转发：{{item.theme.sharenum}} </text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{tp=='3'}}">
+    <view class='content-list'>
+      <block wx:for="{{info.reply}}" wx:key="{{index}} ">
+        <view class='reply'>
+          <view class='replyuser'>
+            <image src='{{item.replyuser.avatar}}'></image>
+            <text class='flex-1'> {{item.replyuser.realname}}回复了您</text>
+            <text>{{item.add_time}}</text>
+          </view>
+          <view class='content'>{{item.content}}</view>
+          <view class='from'>
+            <text>来自于{{item.type=='1'?'课程':item.type=='2'?'文章':item.type=='3'?'讲师':item.type=='4'?'资料':''}}</text>
+            <text style='color:#5097D9' bindtap='getDetail' data-ty="{{item.type}} " data-id="{{item.themeid}} "> {{item.themetname}}</text>
+          </view>
+          <view class='mycomment'>我的评论：{{item.mycomment}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

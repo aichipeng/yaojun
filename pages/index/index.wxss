@@ -1,0 +1,163 @@
+/**index.wxss**/
+
+.page {
+  fonr-size: 35rpx;
+}
+
+.oneline {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page .page-header {
+  padding: 20rpx 30rpx;
+}
+
+.page-header input {
+  background: #fafafa;
+  text-align: center;
+  padding: 5rpx;
+  font-size: 30rpx;
+  margin: 0 30rpx 0 10rpx;
+}
+
+scroll-view navigator {
+  padding: 10rpx 0;
+}
+
+scroll-view .flex-center {
+  width: 110%;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center .flex-1 {
+  flex: 1;
+}
+
+.flex-center .flex-item-4 {
+  width: 25%;
+}
+
+.placeholder {
+  margin: 1px;
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.placeholder.active {
+  color: #4e96d9;
+}
+
+.page .banner {
+  margin-top: 20rpx;
+  height: 240rpx;
+}
+
+.page .title-bar {
+  padding: 20rpx 30rpx;
+  font-size: 33rpx;
+}
+
+.page .recommend {
+  padding: 0 20rpx 20rpx;
+  font-size: 30rpx;
+  border-bottom: solid 5rpx #f2f2f2;
+}
+
+.page .activity {
+  display: flex;
+  align-items: stretch;
+}
+
+.page .documentlist {
+  padding: 0 20rpx;
+}
+
+.documentlist .part {
+  display: flex;
+  padding: 20rpx 0;
+  /* border-bottom: solid 1rpx #f2f2f2; */
+}
+
+.part:first-child {
+  display: block;
+  border-bottom: solid 1rpx #f2f2f2;
+}
+
+.part:first-child image {
+  width: 100%;
+  height: 280rpx;
+}
+
+.part:first-child .text .info {
+  position: unset;
+}
+
+.part:first-child .text .info image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.part image {
+  width: 30%;
+  height: 190rpx;
+  margin-right: 15rpx;
+  border-radius: 15rpx;
+}
+
+.part .text {
+  flex: 1;
+  font-size: 35rpx;
+  position: relative;
+}
+
+.part .count view {
+  display: inline-flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  margin-right: 40rpx;
+  vertical-align: middle;
+}
+
+.part .count image {
+  width: 25rpx;
+  margin-right: 5rpx;
+}
+
+.text .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+
+.info image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -2rpx 2rpx #eee;
+}

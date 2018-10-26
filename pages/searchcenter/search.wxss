@@ -1,0 +1,36 @@
+/* pages/searchcenter/search.wxss */
+
+.search-centre {
+  font-size: 35rpx;
+}
+
+.search-centre .search-box {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  position: relative;
+  border-bottom: solid #f2f2f2 1rpx;
+}
+
+.search-box input {
+  flex: 1;
+  /* width: 10%; */
+  padding: 5rpx 80rpx 5rpx 30rpx;
+}
+
+.bottom-arrow {
+  width: 15rpx;
+  height: 15rpx;
+  border-right: solid #999 1rpx;
+  border-bottom: solid #999 1rpx;
+  transform: rotate(45deg) translateY(-5rpx);
+  margin-left: 10rpx;
+  display:inline-block;
+}
+
+.search-box .clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 140rpx;
+}

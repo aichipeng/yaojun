@@ -1,0 +1,73 @@
+/* pages/login/login.wxss */
+
+.login_type {
+  margin-bottom: 50rpx;
+  font-size: 35rpx;
+}
+
+.login_type text {
+  display: inline-block;
+  width: 40%;
+  padding: 0 4%;
+  line-height: normal;
+}
+
+.login_type navigator {
+  display: inline-block;
+  width: 40%;
+  padding: 0 4%;
+  line-height: normal;
+}
+.login_type .text_right {
+  text-align: right;
+}
+
+.login_form {
+  padding: 0 50rpx;
+}
+
+.login_form .op {
+  padding: 20rpx 40rpx;
+  border: solid 1rpx #4e96d9;
+  margin: 40rpx 0;
+  position: relative;
+  border-radius: 60rpx;
+}
+
+.op image {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+}
+
+.op input {
+  margin-left: 25px;
+}
+
+.op .temp {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  margin-top: -30rpx;
+  font-size: 30rpx;
+  padding: 5rpx 20rpx;
+  border: solid 1rpx #4e96d9;
+  border-radius: 30rpx;
+  color: #4e96d9;
+  z-index: 111;
+}
+
+button {
+  border-radius: 60rpx;
+  color: white;
+  background: #4e96d9;
+  line-height: 90rpx;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+
+button::after {
+  display: none;
+}
+
+

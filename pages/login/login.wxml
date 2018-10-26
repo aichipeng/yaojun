@@ -1,0 +1,32 @@
+<!--pages/login/login.wxml-->
+<view class="page">
+  <image src='../../images/logo.png' style='width:25%;margin:10rpx auto 80rpx;display:block' mode='widthFix'></image>
+  <view class='login_type'>
+    <text class='text_right' data-tp="1" bindtap='changetype' style="border-right: solid 1rpx #4f95da;color:{{login_type==1?'#4f95da':''}}">账号密码登录</text>
+    <text class='text_left' data-tp="2" bindtap='changetype' style="color:{{login_type==2?'#4f95da':''}}">手机验证码登录</text>
+  </view>
+  <view class='login_form'>
+    <form bindsubmit="login">
+      <view class='op'>
+        <image src='../../images/tel.png' style='width:15px' mode='widthFix'></image>
+        <input type='number' name='mobile' placeholder='输入手机号' bindinput="setmobile" maxlength='11'></input>
+      </view>
+      <view class='op'>
+        <image src='../../images/pas.png' style='width:15px' mode='widthFix'></image>
+        <block wx:if="{{login_type==1}}">
+          <input type='password' name='pwd' placeholder='输入密码'></input>
+        </block>
+        <block wx:if="{{login_type==2}}">
+          <input type='number' name='verifycode' placeholder='输入验证码' maxlength='5'></input>
+          <view class='temp' bindtap='gettemp'>获取验证码</view>
+        </block>
+      </view>
+      <button form-type='submit'>提交</button>
+    </form>
+    <view class='login_type'>
+      <navigator class='text_left' url="../register/register?type=1">快速注册</navigator>
+      <navigator class='text_right' url="../register/register?type=2"> 忘记密码？</navigator>
+    </view>
+  </view>
+  
+</view>

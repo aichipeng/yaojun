@@ -1,0 +1,111 @@
+<view class='order'>
+  <!-- <view class='info'>
+    <image src='{{info.avatar}}'></image>
+    <view class='text'>
+      <view>{{info.realname}}</view>
+      <view class='lable'>
+        <text>{{info.is_star==1?'讲师':'咨询师'}}</text>
+        <text>尧君认证</text>
+        <text>{{area_id[0]}}</text>
+      </view>
+    </view>
+  </view> -->
+  <view class='mark' wx:if="{{mark}}">
+    <view class='box'>
+      <view class='tab' wx:for="{{boxInfo}}">
+        <image src='{{item.imgUrl}}' mode='widthFix'></image>
+        <view class='text' bindtap='getForm' data-tp="{{item.tp}}">发布需求</view>
+      </view>
+    </view>
+  </view>
+  <view class='order_header' style="background:{{tp=='1'?'#4A90E2':'#01B5A2'}}">{{tp=='1'?'发布培训需求':'发布咨询需求'}}</view>
+  <view class='order_form'>
+    <form bindsubmit='setorder'>
+      <!-- <input name="lectureid" value='{{info.id}}' style='display:none'></input> -->
+      <view class='op'>
+        <text>联系人 <text class='star'>*</text> </text>
+        <input class='flex-1' name="name" placeholder='请填写您的真实姓名'></input>
+      </view>
+      <view class='op'>
+        <text>联系电话 <text class='star'>*</text></text>
+        <input class='flex-1' type='number' name="tel" maxlength='11' placeholder='请填写您的联系方式'></input>
+      </view>
+      <view class='op'>
+        <text>职务 <text class='star'>*</text></text>
+        <input class='flex-1' name="job" placeholder='请填写您的公司名称 '></input>
+      </view>
+      <view class='op'>
+        <text>企业名称 <text class='star'>*</text></text>
+        <input class='flex-1' name="firmname" placeholder='请填写您所担任的职务'></input>
+      </view>
+      <block wx:if="{{tp == '1'}}">
+        <view class='op'>
+          <text>经营性质 <text class='star'>*</text></text>
+          <picker class='flex-1' mode='selector' range="{{info.group_list}}" range-key="{{'name'}}" value='{{gid}}' bindchange="changeGid">
+            <view class="picker">
+              <input class='hidden' value='{{info.group_list[gid].id}}' name="manage"></input>
+              <text>{{info.group_list[gid].name}}</text>
+              <text class='bottom-arrow'></text>
+            </view>
+          </picker>
+        </view>
+        <view class='op picker part'>
+          <text>培训对象 <text class='star'>*</text></text>
+          <view class='flex-1'>
+            <picker mode='selector' range="{{info.obj}}" range-key="{{'name'}}" value='{{oid}}' bindchange="changeOid">
+              <view class="picker">
+                <text>{{info.obj[oid].name}}</text>
+                <text class='bottom-arrow'></text>
+              </view>
+            </picker>
+            <radio-group class="radio-group" name="training">
+              <label class="radio" wx:for="{{info.obj[oid].son}}" wx:key="{{index}}">
+                <radio value="{{item.id}}" checked="{{item.checked}}" />
+                <view>{{item.name}}</view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view class='op picker part'>
+          <text>培训课程 <text class='star'>*</text></text>
+          <view class='flex-1'>
+            <picker mode='selector' range="{{info.course}}" range-key="{{'name'}}" value='{{cid}}' bindchange="changeCid">
+              <view class="picker">
+                <input class='hidden' value='{{info.course[cid].id}}' name="courses"></input>
+                <text>{{info.course[cid].name}}</text>
+                <text class='bottom-arrow'></text>
+              </view>
+            </picker>
+            <checkbox-group class="radio-group" name="content">
+              <label class="radio" wx:for="{{info.course[cid].son}}" wx:key="{{index}}">
+                <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+                <view>{{item.name}}</view>
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{tp == '2'}}">
+        <view class='op picker part'>
+          <text>培训课程 <text class='star'>*</text></text>
+          <view class='flex-1'>
+            <picker mode='selector' range="{{info.course}}" range-key="{{'name'}}" value='{{cid}}' bindchange="changeCid">
+              <view class="picker">
+                <input class='hidden' value='{{info.course[cid].id}}' name="consult"></input>
+                <text>{{info.course[cid].name}}</text>
+                <text class='bottom-arrow'></text>
+              </view>
+            </picker>
+            <checkbox-group class="radio-group" name="content">
+              <label class="radio" wx:for="{{info.course[cid].son}}" wx:key="{{index}}">
+                <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+                <view>{{item.name}}</view>
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+      </block>
+      <button form-type='submit' style="background:{{tp=='1'?'#4A90E2':'#01B5A2'}}">立即发布</button>
+    </form>
+  </view>
+</view>

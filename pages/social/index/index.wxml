@@ -1,0 +1,19 @@
+<!--pages/social/index/index.wxml-->
+<view class='firend-social'>
+  <view class='roll'>
+    <block wx:if="{{info.roll.length>1}}">
+      <swiper autoplay="true" circular="true">
+        <block wx:for="{{info.roll}}">
+          <swiper-item>
+            <image src='{{item.bannerimg}}' style='width:100%;' mode='aspectFit'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </block>
+    <block wx:else>
+      <block wx:for="{{info.roll}}">
+        <image src='{{item.bannerimg}}' style='width:100%;' mode='widthFix'></image>
+      </block>
+    </block>
+  </view>
+</view>

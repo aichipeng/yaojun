@@ -1,0 +1,18 @@
+<!--pages/member/studycentre/index.wxml-->
+<view class='study_centre'>
+  <block wx:for="{{info.theme}}" wx:key="{{index}}">
+    <navigator class='part' url='../../detail/detail?id={{item.themeid}}'>
+      <view>
+        <image src='{{item.logo}}' mode='aspectFill'></image>
+      </view>
+      <view class='text'>
+        <view class='onerow'>{{item.name}}</view>
+        <view class='describe' wx:if="{{item.viname}}"><text style='color:#4E96D9'>上次观看：</text>{{item.viname}}</view>
+        <view class='progress' wx:if="{{item.pre}}">
+          <progress percent='{{item.pre}}' activeColor='#4E96D9' backgroundColor="#f2f2f2" active="true" stroke-width="4"></progress>
+          <!-- <view>我是进度条</view> -->
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

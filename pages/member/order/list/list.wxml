@@ -1,0 +1,47 @@
+<!--pages/member/order/list/list.wxml-->
+<view class='tab'>
+  <block wx:for="{{tablist}}" wx:key="{{index}}">
+    <view class='op' data-status="{{item.status}}" style="color:{{status==item.status?'#4E96D9':'#666'}};border-bottom:{{status==item.status?'solid 5rpx #4E96D9':'solid 1rpx #f2f2f2'}}" bindtap='changestatus'>{{item.name}}
+    </view>
+  </block>
+</view>
+
+<view class='order_list'>
+  <block wx:if="{{info.order==''}}">
+    <view class='nothing'>
+      <view>~~~~ 暂无订单 ~~~~</view>
+      <view>
+        <navigator url='../../../index/index' open-type='reLaunch'>去逛逛</navigator>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='order' wx:for="{{info.order}}" wx:key="{{index}}">
+      <view class='flex-stretch' bindtap='getDetail' data-tp="{{item.goodstype}}" data-id="{{item.goodsid}}">
+        <view class='img'>
+          <view class='top'>{{item.createtime}}</view>
+          <image src='{{item.logo}}'></image>
+        </view>
+        <view class='text'>
+          <view class='top'>订单号：{{item.ordersn}}</view>
+          <view class='name'>{{item.name}}</view>
+          <view>
+            有效期：{{item.endtime!=null?item.endtime:'永久有效'}}
+          </view>
+          <view class='price'>原价：￥{{item.goodsprice}} <text class='sign'>{{item.goodstype=='theme'?'课程':item.goodstype=='activity'?'公益课':item.goodstype=='means'?'资料':'其他'}}</text> </view>
+        </view>
+      </view>
+      <view class='count'>实付：
+        <text style='color:#FD8524'>￥{{item.price}}</text>
+      </view>
+      <view class='footer'>
+        <text style='color:#4E96D9;float:left'>{{item.status==1?'未付款':item.status==3?'已付款':'已删除'}}</text>
+        <!-- <text class='sign' wx:if="{{item.status==3}}">删除订单</text> -->
+        <view wx:if="{{item.status==1}}">
+          <text class='sign' bindtap='orderCancel' data-id="{{item.id}}">取消订单</text>
+          <text class='sign' bindtap='goBuy' data-info="{{item}}">继续支付</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

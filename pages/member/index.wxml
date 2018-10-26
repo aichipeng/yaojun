@@ -1,0 +1,52 @@
+<!--pages/member/index.wxml-->
+<view class='page'>
+  <view class='user_bg'>
+    <image src='{{img_bg}}' style='position:absolute;top:0;left:0;right:0;z-index:-1;height:320rpx;width:100%'></image>
+    <view class='header'>
+      <!-- <view class='sign_in'>签到
+        <image src='../../images/qiandao.png' mode='widthFix'></image>
+      </view> -->
+      <navigator url='userinfo/userinfo'>
+        <image src='../../images/edit.png' mode='widthFix'></image>
+      </navigator>
+    </view>
+    <view class='userinfo'>
+      <view class='flex-center'>
+        <view>
+          <image src='{{info.avatar}}' style='width:130rpx;height:130rpx;border-radius:50%;'></image>
+        </view>
+        <view class='flex-1'>
+          <view>{{info.realname}}</view>
+          <view style='color:#666666;font-size:30rpx'>{{info.levelname}}</view>
+        </view>
+      </view>
+      <view class='flex-center'>
+        <navigator class='row_3' url='collection/collection'>
+          <view>收藏</view>
+          <view> {{info.collection}}</view>
+        </navigator>
+        <view class='row_3' url=''>
+          <view>积分</view>
+          <view> {{info.boardnum}}</view>
+        </view>
+        <navigator class='row_3' url='follow/follow'>
+          <view>关注</view>
+          <view> {{info.follow}}</view>
+        </navigator>
+        <!-- <navigator class='row_4' url='logs/logs?tp=1'>
+          <view>帖子</view>
+          <view> {{info.note}}</view>
+        </navigator> -->
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='listmenu flex-center' wx:for="{{listinfo}}" wx:key="{{index}}">
+      <view>
+        <image src='{{item.icon}}' mode='aspectFit'></image>
+      </view>
+      <navigator class='flex-1' url='{{item.url}}' open-type="{{item.url=='../grade/list/list'?'switchTab':'navigate'}}">{{item.text}}</navigator>
+    </view>
+  </view>
+  <view class='sign-out' bindtap='signOut'>退出登录</view>
+</view>

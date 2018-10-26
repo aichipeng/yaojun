@@ -1,0 +1,130 @@
+/* pages/list/list.wxss */
+
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -2rpx 2rpx #eee;
+}
+
+.course_list {
+}
+
+.course_list .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.header.screen {
+  position: relative;
+}
+
+.screen .op {
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+  font-size: 35rpx;
+  border-top: solid 1rpx #f3f3f3;
+  border-bottom: solid 1rpx #f3f3f3;
+  padding: 20rpx 0;
+}
+
+.screen .op.act {
+  color: #4e96d9;
+}
+
+.op .icon-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 15rpx solid #333;
+  border-bottom: none;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  margin: auto 10rpx;
+}
+
+.op.act .icon-triangle {
+  border-top: none;
+  border-bottom: 15rpx solid #4e96d9;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+
+.header .modle {
+  position: absolute;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  background: white;
+}
+
+.header .modle1 view, .modle3 view {
+  border-top: solid 1rpx #d2d2d2;
+}
+
+.header .modle1 view:nth-child(1), .modle3 view:nth-child(1) {
+  border: none;
+}
+
+.header .modle1 {
+  width: 33.3%;
+  left: 0;
+}
+
+.header .modle2 {
+  height: 600rpx;
+  width: 100%;
+  display: flex;
+}
+
+.header .modle3 {
+  width: 33.3%;
+  right: 0;
+}
+
+scroll-view {
+  width: 33.3%;
+}
+
+scroll-view view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  font-size: 30rpx;
+  padding: 20rpx;
+  margin-top: 95rpx;
+}
+
+.content .part {
+  display: inline-block;
+  width: 46%;
+  padding: 2%;
+}
+
+.part .title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.part .count {
+  color: #333;
+}
+
+.part .price {
+  color: #f00;
+}

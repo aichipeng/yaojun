@@ -1,0 +1,14 @@
+<!--pages/searchcenter/search.wxml-->
+<view class='search-centre'>
+  <view class='search-box'>
+    <icon type='search' size='18'></icon>
+    <input value='{{keysword}}' placeholder='请输入搜索内容' bindinput='setWords' bindconfirm='goSearch'></input>
+    <picker bindchange="bindPickerChange" value="{{tp}}" range="{{array}}" mode="selector">
+      <view class="picker">
+        <text>{{array[tp]}}</text>
+        <text class='bottom-arrow'></text>
+      </view>
+    </picker>
+    <icon wx:if="{{keysword!=''}}" class='clear' type='clear' size='12' bindtap='clearSearch'></icon>
+  </view>
+</view>

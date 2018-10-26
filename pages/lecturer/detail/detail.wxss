@@ -1,0 +1,327 @@
+/* pages/lecturer/detail/detail.wxss */
+
+.lecturer_detail {
+  font-size: 35rpx;
+}
+
+.lecturer_detail .background {
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 30rpx;
+}
+
+.background .card {
+  padding: 30rpx;
+  box-shadow: 0 0 5rpx 5rpx #eee;
+  border-radius: 20rpx;
+  background: white;
+  opacity: 0.95;
+}
+
+.card .info {
+  display: flex;
+  align-items: center;
+}
+
+.info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.info .text {
+  flex: 1;
+}
+
+.info .text text {
+  padding: 0 20rpx;
+  border: solid 1rpx #4e96d9;
+  color: #4e96d9;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+
+.card .count {
+  padding: 30rpx 0 0;
+  color: #666;
+}
+
+.count .op {
+  display: inline-block;
+  width: 33.33%;
+  text-align: center;
+}
+
+.op .name {
+  font-size: 28rpx;
+}
+
+.lecturer_detail .tab {
+  display: flex;
+  text-align: center;
+  border-top: solid 10rpx #f2f2f2;
+  padding: 20rpx 0;
+}
+
+.tab .part {
+  flex: 1;
+}
+
+.part .text {
+  border-left: solid 2rpx #333;
+}
+
+.part .act {
+  content: "";
+  display: block;
+  height: 12rpx;
+  width: 12rpx;
+  border-radius: 50%;
+  background: #4e96d9;
+  margin: 5rpx auto;
+}
+
+.lecturer_detail .content {
+  padding: 0 30rpx 110rpx;
+}
+
+.content .introduce {
+  padding: 20rpx 0;
+}
+
+.introduce .titlebar {
+  border-left: solid 5rpx #4e96d9;
+  margin-bottom: 20rpx;
+  line-height: 30rpx;
+  padding: 0 5rpx;
+}
+
+.introduce .describe {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.content .courselist .course {
+  display: flex;
+  align-items: center;
+}
+
+.course image {
+  width: 220rpx;
+  height: 150rpx;
+  border: solid 1rpx #eee;
+}
+
+.course .text {
+  margin-left: 20rpx;
+  padding: 20rpx 0;
+  border-top: dashed 1rpx #333;
+  flex: 1;
+}
+
+.course:first-child .text {
+  border-top: none;
+}
+
+.text .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.text .count {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.text .price {
+  color: #e4593f;
+  margin-top: 15rpx;
+}
+
+.content .articlelist .article {
+  display: flex;
+  align-items: flex-start;
+  padding: 10rpx 0;
+}
+
+.article image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.article .text {
+  flex: 1;
+  font-size: 30rpx;
+  width: 50%;
+}
+
+.article .description {
+  color: #666;
+}
+
+.content .commentlist .comment {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 30rpx;
+  color: #666;
+}
+
+.comment image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.comment .text {
+  flex: 1;
+  font-size: 30rpx;
+}
+
+.text .theme {
+  padding: 20rpx 0;
+}
+
+.text .reply {
+  background: #f2f2f2;
+  padding:10rpx 20rpx;
+  border-radius: 10rpx;
+  margin: 15rpx 0;
+}
+
+.reply .name {
+  color: #4e96d9;
+}
+
+.text .theme text {
+  color: #4e96d9;
+}
+
+.lecturer_detail .navbtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-top: solid 1rpx #f2f2f2;
+  text-align: center;
+  color: #666;
+}
+
+.navbtn .nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .navbtn .nav:nth-child(1) {
+  border-right: dashed 1rpx #666;
+} */
+
+.navbtn .nav:nth-child(2) {
+  background: #4e96d9;
+  color: white;
+  align-self: stretch;
+}
+
+.nav image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+
+.lecturer_detail .tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2rpx 2rpx #eee;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.tabbar image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+  display: block;
+}
+
+.collection image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tabbar input {
+  margin-left: 20rpx;
+}
+
+.tabbar .release {
+  background: #f2f2f2;
+  border-radius: 50rpx;
+  padding: 10rpx 40rpx 10rpx 10rpx;
+}
+
+.mark {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.2;
+  z-index: 99;
+}
+
+.reply_popup {
+  position: fixed;
+  padding: 30rpx 30rpx 20rpx;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  margin-left: -30rpx;
+  background: white;
+  border-radius: 20rpx;
+  z-index: 199;
+  font-size: 30rpx;
+}
+
+.reply_popup textarea {
+  height: 110rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rpx 20rpx;
+  border: solid 1rpx #f2f2f2;
+}
+
+.reply_popup .reply {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.reply_popup text {
+  padding: 5rpx 20rpx;
+  background: #4e96d9;
+  color: white;
+  border-radius: 10rpx;
+}

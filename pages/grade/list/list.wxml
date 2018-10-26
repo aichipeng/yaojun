@@ -1,0 +1,18 @@
+<!--pages/grade/list/list.wxml-->
+<view class='grade_list'>
+  <block wx:for="{{info.group}}" wx:key="{{index}}">
+    <navigator class='part' url='../detail/detail?id={{item.id}}'>
+      <view>
+        <image src='{{item.logo}}' mode='aspectFill'></image>
+      </view>
+      <view class='text'>
+        <view class='onerow title'>{{item.name}}</view>
+        <view class='onerow introduction'>{{item.introduction}}</view>
+        <view class='count'>
+          <text> 成员：{{item.peoplenum}}人</text>
+          <text class='sign'>{{item.join==0?'未加入':'已加入'}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

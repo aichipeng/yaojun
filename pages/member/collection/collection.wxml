@@ -1,0 +1,29 @@
+<!--pages/member/collection/collection.wxml-->
+<view class='collection'>
+  <view class='header-nav'>
+    <block wx:for="{{headerNav}}" wx:key="{{index}}">
+      <view class='part' data-tid="{{item.id}}" bindtap='changetid' style="color:{{tid==item.id?'#4E96D9':'#333333'}};border-bottom:solid {{tid==item.id?'#4E96D9 5rpx':'#f2f2f2 1rpx'}}">{{item.name}}</view>
+    </block>
+  </view>
+  <view class='collection-list'>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator class='flex-stretch' wx:if="{{tid=='0'}}" url='../../detail/detail?id={{item.theme.themeid}}'>
+        <image src='{{item.theme.logo}}' mode='aspectFill'></image>
+        <view class='flex-1 relative'>
+          <view class='oneline title'>{{item.theme.name}}</view>
+          <view class='oneline'>{{item.theme.teacheris_start}}|{{item.theme.teachername}}</view>
+          <view class='absolute-bottom' style='color:#E4593F'>{{item.theme.price}}</view>
+        </view>
+      </navigator>
+      <navigator class='flex-stretch box-shadow' wx:if="{{tid=='1'}}" url='../../fieldview/detail/detail?id={{item.docu.article_id}}'>
+        <image src='{{item.docu.cover_id}}' mode='aspectFill'></image>
+        <view class='flex-1 relative'>
+          <view class='oneline title'>{{item.docu.title}}</view>
+          <view class='oneline'>{{item.docu.description}}</view>
+          <view class='absolute-bottom' style='padding-top:10rpx;border-top:solid #f2f2f2 1rpx;'>发布时间：{{item.docu.create_time}}</view>
+        </view>
+      </navigator>
+    </block>
+    <view wx:if="{{list==''}}" style='text-align:center;margin-top:100rpx;font-size:40rpx;'>对不起！暂无相关内容</view>
+  </view>
+</view>

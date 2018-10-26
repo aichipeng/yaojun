@@ -1,0 +1,8 @@
+<!--pages/buy/buy.wxml-->
+<view>{{name}}</view>
+<view>{{price}}</view>
+<view wx:for="{{payType}}" wx:key="{{index}}">
+  <view bindtap='choosePay' data-paytype="{{item.paytype}}">
+    {{item.name}}
+  </view>
+</view>

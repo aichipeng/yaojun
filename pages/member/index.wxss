@@ -1,0 +1,103 @@
+/* pages/member/index.wxss */
+
+.page {
+  /* padding-bottom: 150rpx; */
+  font-size: 35rpx;
+  /* position: relative; */
+}
+
+.page .user_bg {
+  padding: 50rpx 30rpx 20rpx;
+}
+
+.user_bg .header {
+  display: flex;
+  align-items: center;
+  /* color: white; */
+  margin-bottom: 100rpx;
+  justify-content: flex-end;
+}
+
+.header .sign_in {
+  padding: 0 20rpx;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10rpx;
+}
+
+.header image {
+  width: 40rpx;
+  margin: auto 0;
+  display: block;
+  border-radius: 50%;
+}
+
+.sign_in image {
+  width: 35rpx;
+  display: inline-block;
+}
+
+.user_bg .userinfo {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 3rpx 3rpx #f2f2f2;
+}
+
+.userinfo .flex-center:nth-child(1) {
+  border-bottom: solid 1rpx #f6f6f6;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center .row_3 {
+  width: 33.33%;
+  text-align: center;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.flex-center .flex-1 {
+  flex: 1;
+  margin-left: 20rpx;
+  padding: 25rpx 0;
+}
+
+.listmenu {
+  padding-left: 40rpx;
+}
+
+.listmenu .flex-1 {
+  border-top: solid 1rpx #f6f6f6;
+}
+
+.listmenu:first-child .flex-1 {
+  border-top: none;
+}
+
+.listmenu image {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+}
+
+.sign-out {
+  color: red;
+  text-align: center;
+  padding: 20rpx 0;
+  border-top: solid 1rpx #f2f2f2;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -2rpx 2rpx #eee;
+}

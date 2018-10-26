@@ -1,0 +1,173 @@
+.order {
+  font-size: 35rpx;
+  padding-bottom: 80rpx;
+}
+
+/* .order .info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: solid 10rpx #f2f2f2;
+}
+
+.info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.info .text {
+  flex: 1;
+}
+
+.info .text text {
+  padding: 0 20rpx;
+  border: solid 1rpx #4e96d9;
+  color: #4e96d9;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+} */
+
+.order .mark {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 111;
+}
+
+.order .box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background: white;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+}
+
+.box .tab {
+  flex: 1;
+  padding: 30rpx;
+}
+
+.tab .text {
+  margin: 40rpx auto 0;
+  width: 70%;
+  text-align: center;
+  padding: 10rpx;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 30rpx;
+}
+
+.tab:nth-child(1) .text {
+  background: rgba(74, 144, 226, 1);
+  box-shadow: 0px 2px 7px 0px rgba(83, 144, 216, 0.5);
+}
+
+.tab:nth-child(2) .text {
+  background: rgba(2, 182, 165, 1);
+  box-shadow: 0px 2px 7px 0px rgba(28, 141, 130, 0.5);
+}
+
+.tab image {
+  width: 100%;
+}
+
+.order .order_header {
+  color: white;
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.order .order_form {
+  font-size: 30rpx;
+}
+
+.order_form .op {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  margin: 0 30rpx;
+  border-bottom: solid 1rpx #f2f2f2;
+}
+
+.order_form .picker {
+  border-bottom: none;
+  align-items: flex-start;
+}
+
+.op text {
+  width: 25%;
+}
+
+.op .flex-1 {
+  flex: 1;
+  margin-right: 30rpx;
+  color: #666;
+}
+
+.op .hidden {
+  display: none;
+}
+
+.op picker {
+  border: solid 1rpx #f2f2f2;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+}
+
+picker .bottom-arrow {
+  width: 15rpx;
+  height: 15rpx;
+  display: inline-block;
+  border-bottom: solid #4395ff 3rpx;
+  border-right: solid #4395ff 3rpx;
+  transform: rotate(45deg) translateY(10rpx);
+  float: right;
+}
+
+.part .radio-group {
+  padding-top: 20rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  width: 48%;
+  margin: 20rpx 2% 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.radio-group radio, checkbox {
+  transform: scale(0.7);
+}
+
+.star {
+  color: red;
+}
+
+.order_form button {
+  background: #4e96d9;
+  color: white;
+  border-radius: 0;
+  font-size: 35rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+button::after {
+  border: none;
+}

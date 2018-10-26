@@ -1,0 +1,89 @@
+/* pages/lecturer/order/order.wxss */
+
+.order {
+  font-size: 35rpx;
+}
+
+.order .info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: solid 10rpx #f2f2f2;
+}
+
+.info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.info .text {
+  flex: 1;
+}
+
+.info .text text {
+  padding: 0 20rpx;
+  border: solid 1rpx #4e96d9;
+  color: #4e96d9;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+
+.order_form {
+}
+
+.order_form .op {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  margin: 0 30rpx;
+  border-bottom: solid 1rpx #f2f2f2;
+}
+
+.op text {
+  width: 30%;
+}
+
+.op input, textarea {
+  flex: 1;
+}
+
+textarea {
+  border: solid 1rpx #f2f2f2;
+  padding: 20rpx;
+}
+
+.order_form picker {
+  padding: 30rpx;
+  border-bottom: solid 10rpx #f2f2f2;
+}
+
+.order_form .picker {
+  display: flex;
+  align-items: center;
+}
+
+.picker .icon_right {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: solid 1rpx #333;
+  border-right: solid 1rpx #333;
+  transform: rotate(45deg);
+}
+
+.order_form button {
+  background: #4e96d9;
+  color: white;
+  border-radius: 0;
+  font-size: 35rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+button::after {
+  border: none;
+}

@@ -1,0 +1,64 @@
+/* pages/fieldview/reward/reward.wxss */
+
+.reward {
+  font-size: 35rpx;
+  text-align: center;
+}
+
+.reward .info {
+  color: #333333;
+}
+
+.info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border: solid 5rpx white;
+  display: block;
+  margin: 50rpx auto 20rpx;
+}
+
+.reward .money-list {
+  margin: 30rpx 0;
+}
+
+.reward .money-list .item {
+  display: inline-block;
+  width: 33.33%;
+}
+
+.reward .other {
+  width: 93%;
+  padding: 20rpx 0;
+  border: solid 1rpx #999;
+  color: #999;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+}
+
+.other input {
+  border-bottom: solid 1rpx #999;
+  display: block;
+  width: 200rpx;
+  margin: 20rpx auto;
+}
+
+.item text {
+  display: block;
+  width: 80%;
+  padding: 20rpx 0;
+  border: solid 1rpx #999;
+  color: #999;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+}
+
+.reward .gopay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 0;
+  color: white;
+  background: #4e96d9;
+}

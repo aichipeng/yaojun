@@ -1,0 +1,52 @@
+/* pages/register/register.wxss */
+.register{
+  padding: 0 50rpx;
+}
+.register .op {
+  padding: 20rpx 40rpx;
+  margin: 40rpx 0;
+  position: relative;
+  border-radius: 60rpx;
+  background: #EFF3F6;
+}
+
+.op image {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+}
+
+.op input {
+  margin-left: 25px;
+}
+
+.op .temp {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  margin-top: -30rpx;
+  font-size: 30rpx;
+  padding: 5rpx 20rpx;
+  border: solid 1rpx #4e96d9;
+  border-radius: 30rpx;
+  color: #4e96d9;
+  z-index: 111;
+}
+checkbox {
+  padding-bottom: 80rpx;
+  color:#C3C3C3;
+  transform: scale(.7)
+}
+
+button {
+  border-radius: 60rpx;
+  color: white;
+  background: #4e96d9;
+  line-height: 90rpx;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+
+button::after {
+  display: none;
+}

@@ -1,0 +1,105 @@
+<!--pages/grade/detail/detail.wxml-->
+<view class='grade_detail'>
+  <view class='grade_info'>
+    <view>
+      <image src='{{info.image}}' mode='aspectFit	'></image>
+    </view>
+    <view class='text'>
+      <view>{{info.name}}</view>
+      <view class='count'>今日人气：14542</view>
+      <view class='describe'>{{info.education}}</view>
+      <view style='text-align:right'>
+        <!-- <text class='joinGrade' style='background:'>加入</text> -->
+      </view>
+    </view>
+  </view>
+  <view class='member_info'>
+    <view class='headmaster'>
+      <image src='{{info.headmaster_image}}' mode='aspectFit'></image>
+      <view class='text'>
+        <view>{{info.headmaster}}</view>
+        <view>
+          <text class='sign'>班主任</text>
+        </view>
+      </view>
+    </view>
+    <view class='student'>
+      <view>成员：{{info.peoplenum}}人</view>
+    </view>
+  </view>
+  <view class='notice'>
+    <view>公告：</view>
+    <swiper wx:if="{{notic.notice!=''}}" vertical='true' autoplay='true' circular='true'>
+      <block wx:for="{{notic.notice}}" wx:key="{{index}}">
+        <swiper-item class="onerow">
+          {{item.remark}}
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='nothing' wx:else style='color:#666;font-size:30rpx'>暂无公告...</view>
+  </view>
+  <view class='tab'>
+    <block wx:for="{{tablist}}" wx:key="{{index}}">
+      <view class='part' style="color:{{tid==index?'#4E96D9':'#666'}}" data-tid="{{index}}" bindtap='changetid'>
+        <view style="border-left:{{index!=0?'solid 1rpx #666':''}}">{{item}}</view>
+        <view wx:if="{{tid==index}}" class='spot'></view>
+      </view>
+    </block>
+  </view>
+  <view class='content'>
+    <block wx:if="{{tid==0}}">
+      <view class='course'>
+        <navigator class='part' wx:for="{{course.course}}" wx:key="{{index}}" url='../../detail/detail?id={{item.id}}'>
+          <image src='{{item.image}}' mode='aspectFill'></image>
+          <view class='onerow'>{{item.name}}</view>
+          <view class='onerow introduction'>{{item.introduction}}</view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:if="{{tid==1}}">
+      <view class='ware'>
+        <view class='part' wx:for="{{ware.ware}}" wx:key="{{index}}">
+          <view>
+            <image src='../../../images/user_bg.png' mode='aspectFill'></image>
+          </view>
+          <view class='text'>
+            <view class='onerow'>{{item.name}}</view>
+            <view class='onerow introduction'>{{item.content}}</view>
+            <view class='bottom'>
+              <text>文档</text>
+              <text class='download' bindtap='download' data-file="{{item.path}}" data-id="{{item.id}}">立即下载</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{tid==2}}">
+      <view class='titlebar'>
+        <image src='/images/7.png' style='width:40rpx;' mode='widthFix'></image>
+        <view>班主任</view>
+      </view>
+      <view class='flex-stretch'>
+        <image src='{{info.headmaster_image}}' style='width:120rpx;height:120rpx'></image>
+        <view class='text'>
+          <view>{{info.headmaster}}</view>
+          <view class='describe'>{{info.teacher}}</view>
+        </view>
+      </view>
+      <view class='titlebar'>
+        <image src='/images/8.png' style='width:40rpx;' mode='widthFix'></image>
+        <view>班级顾问</view>
+      </view>
+      <view  >
+        <block wx:for="{{info.adviser}}" wx:key="{{index}}">
+          <view class='flex-stretch'>
+            <image src='{{item.logo}}' style='width:120rpx;height:120rpx'></image>
+            <view class='text'>
+              <view>{{item.name}}</view>
+              <view class='describe'>{{item.education}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

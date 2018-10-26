@@ -1,0 +1,47 @@
+/* pages/member/studycentre/index.wxss */
+
+.study_centre {
+  font-size: 32rpx;
+  padding: 0 30rpx;
+}
+
+.study_centre .part {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx 0;
+  border-bottom: solid #f2f2f2 1rpx;
+}
+
+.part image {
+  height: 160rpx;
+  width: 260rpx;
+  display: block;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+
+.onerow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.part .text {
+  width: 58%;
+  position: relative;
+}
+
+.text .describe {
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.text .progress {
+  color: #4E96D9;
+  font-size: 25rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

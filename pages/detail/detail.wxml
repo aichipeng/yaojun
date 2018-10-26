@@ -1,0 +1,128 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='course-detail'>
+  <view>
+    <image src='{{class.logo}}' style='width:100%;display:block' mode='widthFix'></image>
+  </view>
+  <view class='info'>
+    <view style='  color: #333333;font-weight: bold;'>{{class.name}}</view>
+    <view style='color:#E4593F;margin-top:10rpx;'>
+      <block wx:if="{{class.type=='1'}}">
+        <text>{{class.price}} <text style='font-size:28rpx;color:#666666; text-decoration:line-through;'>{{class.original_price}}</text></text>
+      </block>
+      <block wx:else>
+        <text>免费</text>
+      </block>
+      <text style='color:#666666;float:right;'>{{class.buys}}人已购买</text>
+    </view>
+  </view>
+  <view class='content' style='padding-bottom:{{class.type==1?"110rpx":""}}'>
+    <view class='menu'>
+      <view class="op" data-cid='1' bindtap='changecid'>
+        <view style="color:{{cid==1?'#4e96d9':''}}">介绍</view>
+        <view class="{{cid==1?'act':''}}"></view>
+      </view>
+      <view class="op" data-cid='2' bindtap='changecid'>
+        <view style="border-left: solid 1rpx #797979;color:{{cid==2?' #4e96d9 ':' '}}">目录</view>
+        <view class="{{cid==2?'act':''}}"></view>
+      </view>
+      <view class="op " data-cid='3' bindtap='changecid'>
+        <view style="border-left: solid 1rpx #797979;color:{{cid==3?' #4e96d9 ':' '}}">评价</view>
+        <view class="{{cid==3?'act':''}}"></view>
+      </view>
+    </view>
+    <view class='modle'>
+      <view class='introduce' wx:if="{{cid==1}}">
+        <view class='titlebar'>
+          <image src='../../images/7.png' style='width:35rpx;margin-right:10rpx' mode='widthFix'></image>
+          <text>课程介绍</text>
+        </view>
+        <view class='describe' style='height:{{more?"unset":"150rpx"}};min-height:150rpx;'>
+          <template is="wxParse" data="{{wxParseData:course.nodes}}" />
+        </view>
+        <view class='more {{more?"close":"open"}}' bindtap='getmore'>
+          <text>{{more?"收起":"展开"}}</text>
+        </view>
+        <view class='titlebar'>
+          <image src='../../images/8.png' style='width:35rpx;margin-right:10rpx' mode='widthFix'></image>
+          <text>讲师介绍</text>
+        </view>
+        <view class='describe'>
+          {{class.teacher.education}}
+        </view>
+        <!-- <view class='titlebar'>
+          <image src='../../images/9.png' style='width:35rpx;margin-right:10rpx' mode='widthFix'></image>
+          <text>适用人群</text>
+        </view>
+        <view class='describe'>11111</view> -->
+      </view>
+      <view class='catalog' wx:if="{{cid==2}}">
+        <block wx:for="{{catalog}}" wx:key="">
+          <view class='chapter' data-videoinfo="{{item}}" bindtap='getvideo'>
+            <text>{{index+1}}、</text>
+            <text class='title'>{{item.name}}</text>
+            <text>{{item.timeslength}}</text>
+          </view>
+        </block>
+        <view wx:if="{{catalog==''}}" style='padding:40rpx;text-align:center;'>暂无</view>
+      </view>
+      <view class='comment' wx:if="{{cid==3}}">
+        <view class='titlebar'>全部评价</view>
+        <block wx:for="{{comment.common}}" wx:key="{{index}}">
+          <view class='part'>
+            <view class=''>
+              <image src='{{item.avatar}}'></image>
+            </view>
+            <view class='text'>
+              <view class='flex-center'>
+                <view class='flex_1'>{{item.realname}}</view>
+                <!-- <image src='../../../images/praise.png' mode='aspectFit'></image> -->
+                <!-- <view style='color:#999;'>赞</view> -->
+              </view>
+              <view class='content' bindtap='showPopup' data-pid="{{item.id}}">{{item.content}}</view>
+              <view class='reply' wx:if="{{item.children&&item.children!=''}}">
+                <block wx:for="{{item.children}}" wx:key="{{index}}" wx:for-item='val'>
+                  <view>
+                    <text class='name'>{{val.realname}}<text wx:if="{{val.realname!=val.username}}">回复</text>：</text>
+                    <text bindtap='showPopup' data-pid="{{val.pid}}" data-p_pid="{{val.id}}">{{val.content}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view wx:if="{{comment.common==''}}" style='padding:40rpx;text-align:center;'>暂无评价</view>
+        <view class='tabbar flex-center'>
+          <view class='release flex_1 flex-center'>
+            <image src='../../images/1.png' mode='aspectFit'></image>
+            <input placeholder='发布评论...' class='flex_1' bindconfirm='addcommit' value='{{commit}}' cursor-spacing="20"></input>
+          </view>
+          <view class='collection' bindtap='courseCollection'>
+            <image src="../../images/12{{mycollection=='0'?'':'_1'}}.png" mode='aspectFit'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='navbtn' wx:if="{{class.type==1&&cid!=3&&class.is_view!=0}}">
+    <view class='nav' bindtap='courseCollection' data-focu="{{focu}}">
+      <image src="../../images/12{{mycollection=='0'?'':'_1'}}.png" mode='aspectFit'></image>
+      <text>{{mycollection=='0'?'收藏':'已收藏'}}</text>
+    </view>
+    <view class='nav'  bindtap='buyCourse'>
+      <text>购买课程</text>
+    </view>
+    <!-- <view class='nav' style="color:{{class.is_view==1?'#333':'white'}};background:{{class.is_view==1?'#ddd':'#4e96d9'}}" bindtap='buyCourse'>
+      <text>{{class.is_view==1?'已购买':'购买课程'}}</text>
+    </view> -->
+  </view>
+</view>
+
+<!-- 回复弹窗 -->
+<view class='mark' bindtap='hidepopup' wx:if="{{reply==true}}" bindtap='hidePopup'></view>
+<view class='reply_popup' wx:if="{{reply==true}}">
+  <textarea placeholder='回复...' bindinput="setcommit" fixed='true' cursor-spacing='100'></textarea>
+  <view class='reply'>
+    <text bindtap='addcommit' data-pid="{{pid}}" data-p_pid="{{p_pid}}">回复</text>
+  </view>
+</view>

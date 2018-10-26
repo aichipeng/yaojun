@@ -1,0 +1,48 @@
+<!--pages/lecturer/list/list.wxml-->
+<view class='lecturer_list'>
+  <view class='header' style=''>
+    <scroll-view scroll-x style='' scroll-with-animation="true">
+      <picker disabled="true" style=''>
+        <view data-pid="" bindtap='changepid' style="color:{{pid==''?'#4E96D9':''}}">不限</view>
+      </picker>
+      <block wx:for="{{info.cate.category}}" wx:key="" wx:for-index="idx">
+        <picker disabled="{{item.children==''}}" bindchange="bindPickerChange" range='{{item.children}}' range-key="{{'title'}}" style=''>
+          <view data-pid="{{item.id}}" bindtap='changepid' style="color:{{pid==item.id?'#4E96D9':''}}">{{item.title}}</view>
+        </picker>
+      </block>
+    </scroll-view>
+    <view class='startype'>
+      <text style="color:{{is_star==0?'#ffffff':'#999999'}};background:{{is_star==0?'#4E96D9':''}}" data-star='0' bindtap='changestar'>不限</text>
+      <text style="color:{{is_star==1?'#ffffff':'#999999'}};background:{{is_star==1?'#4E96D9':''}}" data-star='1' bindtap='changestar'>讲师</text>
+      <text style="color:{{is_star==2?'#ffffff':'#999999'}};background:{{is_star==2?'#4E96D9':''}}" data-star='2' bindtap='changestar'>咨询师</text>
+    </view>
+  </view>
+  <view class='content'>
+    <block wx:for="{{info.lecture.user}}" wx:key="">
+      <view class='op'>
+        <navigator class='info' url='../detail/detail?id={{item.id}}'>
+          <image class='img' src='{{item.logo}}' mode='aspectFit'></image>
+          <view class='text'>
+            <view class='onerow' style='display:flex;align-items:center;'>
+              <image src="/images/is_star{{item.is_star}}.png" style='width:35rpx;height:35rpx;'></image>
+              <text style='color:#333333;font-weight:bold;margin:0 10rpx;font-size:35rpx;'>{{item.realname}}</text>
+              <text style='color:#FF9900'><text style='font-style:italic'>V </text>尧君认证</text>
+            </view>
+            <view class='onerow'>{{item.education}}</view>
+            <view class='onerow' style='color:#4E96D9;margin-bottom:10rpx;'>擅长领域：{{item.industry}}</view>
+            <!-- <view class='onerow'>{{item.label}}</view> -->
+            <view class='onerow territory'>{{item.territory}}</view>
+          </view>
+        </navigator>
+        <view class='count'>
+          <text>已有学员 | {{item.fellow}}人</text>
+          <text>{{item.area_id}}</text>
+          <text class='follow' style="background:{{item.focu==0?'#4e96d9':'#ddd'}};color:{{item.focu==0?'white':'#333'}}" bindtap='follow' data-index='{{index}}'>{{item.focu==0?'关注':'已关注'}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{info.lecture.user==''}}">
+      <view style='text-align:center;margin-top:100rpx;font-size:40rpx;'>对不起！暂无相关内容</view>
+    </block>
+  </view>
+</view>

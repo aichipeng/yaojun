@@ -1,0 +1,84 @@
+/* pages/fieldView/list/list.wxss */
+
+.fieldview_list {
+  font-size: 35rpx;
+}
+
+.fieldview_list .header {
+  white-space: nowrap;
+}
+
+.header .op {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+.header .act {
+  color: #4e96d9;
+}
+.act view::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 5rpx;
+  margin: 5rpx auto;
+  background: #4e96d9;
+  border-radius: 5px;
+}
+.fieldview_list .content {
+  padding: 20rpx 30rpx;
+}
+
+.content .part {
+  border-bottom: solid 1rpx #f3f3f3;
+  padding: 20rpx 0;
+}
+
+.part .info {
+  display: flex;
+  align-items: center;
+  padding-top: 20rpx;
+}
+
+.info .text {
+  flex: 1;
+  padding: 0 20rpx;
+}
+
+.info .follow {
+  color: white;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  border-radius: 50rpx;
+}
+
+.part .title {
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.part .description {
+  font-size: 30rpx;
+  color: #666;
+  word-break: break-all;
+}
+
+.part .count {
+  padding: 20rpx 0;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.count image {
+  margin-right: 10rpx;
+  width: 30rpx;
+}
+
+.count view {
+  margin-right: 40rpx;
+  font-size: 30rpx;
+}

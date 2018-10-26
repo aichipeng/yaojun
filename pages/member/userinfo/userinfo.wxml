@@ -1,0 +1,20 @@
+<!--pages/member/userinfo/userinfo.wxml-->
+<view class='make-info'>
+  <form bindsubmit='makeInfo'>
+    <view class='flex-centre'>
+      <view class='flex-1'>昵称</view>
+      <view>
+        <input value='{{info.realname}}' name="realname"></input>
+      </view>
+    </view>
+    <view class='flex-centre'>
+      <input value='{{avatarid}}' name="avatar" style='display:none'></input>
+      <view class='flex-1'>头像</view>
+      <view bindtap='chooseImage'>
+        <image src='{{avatar}}' mode='widthFix' style='width:100rpx;'></image>
+      </view>
+      <text bindtap='chooseImage' class='right-arrow'></text>
+    </view>
+    <button class='btn' form-type='submit' type='primary'>修改</button>
+  </form>
+</view>

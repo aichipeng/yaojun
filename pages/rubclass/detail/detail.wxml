@@ -1,0 +1,93 @@
+<!--pages/rubclass/detail/detail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='rubclass_detail'>
+  <view class='info'>
+    <image src='{{info.cover}}' mode='widthFix'></image>
+    <view class='text'>
+      <view class='title'>{{info.actname}}</view>
+      <view class='point'>
+        <text>讲师: {{info.lecturername}}</text>
+        <text class='time'>开课时间: {{times[0]}}</text>
+        <text>地点: {{info.address}}</text>
+      </view>
+      <view class='count'>
+        <text class='price'>{{info.money}}</text>
+        <text class='num' wx:if="{{info.type!=0}}">{{info.enter}}人已报名</text>
+      </view>
+    </view>
+  </view>
+  <view class='tab'>
+    <view class='part'>
+      <view class='text' data-tid="1" bindtap='changetid' style='border-left:none;  color:{{tid==1?"#4e96d9":""}};'>课程介绍</view>
+      <view class='{{tid==1?"act":""}}'></view>
+    </view>
+    <view class='part'>
+      <view class='text' data-tid="2" bindtap='changetid' style='color:{{tid==2?"#4e96d9":""}};'>课程内容</view>
+      <view class='{{tid==2?"act":""}}'></view>
+    </view>
+    <view class='part'>
+      <view class='text' data-tid="3" bindtap='changetid' style='color:{{tid==3?"#4e96d9":""}};'>讲师介绍</view>
+      <view class='{{tid==3?"act":""}}'></view>
+    </view>
+  </view>
+  <view class='content'>
+    <block wx:if="{{tid==1}}">
+      <view class='introduce'>
+        <view wx:if="{{info.content==''||info.content==null}}">暂无简介</view>
+        <block wx:else>
+          <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:if="{{tid==2}}">
+      <view class='courselist'>
+        <view wx:if="{{info.list==''||info.list==null}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无内容</view>
+        <block wx:else>
+          <template is="wxParse" data="{{wxParseData:list.nodes}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:if="{{tid==3}}">
+      <view wx:if="{{info.territory==''||info.territory==null}}" style='font-size:40rpx;text-align:center;padding:30rpx 0'>暂无内容</view>
+      <view wx:else class='lecturer'>
+        {{info.territory}}
+      </view>
+    </block>
+  </view>
+  <view class='navbtn' wx:if="{{info.type!=0}}">
+    <!-- <view class='nav' bindtap='' data-focu="{{focu}}">
+      <image src='../../../images/12.png' mode='aspectFit'></image>
+      <text>{{focu==0?'收藏':'已收藏'}}</text>
+    </view> -->
+    <view class='nav' bindtap='getmodle' >
+      <text>立即报名</text>
+    </view>
+  </view>
+</view>
+<view class='mark' wx:if="{{modle}}">
+</view>
+<view class='modle' wx:if="{{modle}}">
+  <form bindsubmit='submitEnter'>
+    <input name="activityid" value='{{info.id}}' style='display:none'> </input>
+    <view class='title'>在线报名
+      <view class='close' bindtap='close'>X</view>
+    </view>
+    <view class='op'>
+      <text>联系人</text>
+      <input name="name"></input>
+    </view>
+    <view class='op'>
+      <text>手机号</text>
+      <input type='number' maxlength='11' name="phone"></input>
+    </view>
+    <view class='op'>
+      <text>公司</text>
+      <input name="company"></input>
+    </view>
+    <view class='op'>
+      <text>职务</text>
+      <input name="job"></input>
+    </view>
+    <button form-type='submit'>提交</button>
+  </form>
+</view>

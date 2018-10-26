@@ -1,0 +1,20 @@
+<!--pages/member/appointment/appointment.wxml-->
+<view class='appointment'>
+  <view class='titlebar'>我的预约</view>
+  <view class='appointment-list'>
+    <block wx:for="{{info.appoint}}" wx:key="{{index}}">
+      <navigator class='flex-stretch' url='../../lecturer/detail/detail?id={{item.teacher.id}}'>
+        <image src='{{item.teacher.logo}}'></image>
+        <view class='flex-1 relative'>
+          <view class='title oneline'>
+            <text>{{item.teacher.realname}}</text>
+             <text style='color:#FF9900'><text style='font-style:italic'>V </text>{{item.teacher.is_star==1?'讲师':'咨询师'}}</text>
+          </view>
+          <view class='oneline'>{{item.teacher.industry}}</view>
+          <view>预约时间：{{item.times}}</view>
+          <view class='oneline absolute-bottom'>地点 | {{item.teacher.area_id}}</view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

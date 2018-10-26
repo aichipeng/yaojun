@@ -1,0 +1,23 @@
+<!--pages/member/follow/follow.wxml-->
+<view class='follow'>
+  <view class='header-nav'>
+    <block wx:for="{{headerNav}}" wx:key="{{index}}">
+      <view class='part' data-star="{{item.is_star}}" bindtap='changestar' style="color:{{is_star==item.is_star?'#4E96D9':'#333333'}};border-bottom:solid {{is_star==item.is_star?'#4E96D9 5rpx':'#f2f2f2 1rpx'}}">{{item.name}}</view>
+    </block>
+  </view>
+  <view class='follow-list'>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator class='flex-stretch' url='/pages/lecturer/detail/detail?id={{item.lectureid}}'>
+        <image src='{{item.teacher.logo}}' mode='aspectFill'></image>
+        <view class='flex-1 relative'>
+          <view class='title oneline'>{{item.teacher.realname}}
+            <text style='color:#FF9900'><text style='font-style:italic'>V </text>{{item.teacher.is_star==1?'讲师':'尧君认证'}}</text>
+          </view>
+          <view class='oneline'>{{item.teacher.area_id}}</view>
+          <view class='oneline' style='color:#4E96D9;margin-bottom:10rpx;'>擅长领域：{{item.teacher.industry}}</view>
+          <view class='oneline absolute-bottom'>{{item.teacher.territory}}</view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

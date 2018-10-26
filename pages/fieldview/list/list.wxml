@@ -1,0 +1,37 @@
+<!--pages/fieldView/list/list.wxml-->
+<view class='fieldview_list'>
+  <scroll-view class='header' scroll-x>
+    <view class='op {{article_cate==""?"act":""}}' data-cate="" bindtap='changecate'>
+      <view>全部</view>
+    </view>
+    <block wx:for="{{info.article_cate}}" wx:key="">
+      <view class='op {{article_cate==item?"act":""}}' data-cate="{{item}}" bindtap='changecate'>
+        <view>{{item}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='content'>
+    <block wx:for="{{document}}" wx:key="">
+      <view class='part'>
+        <view class='info'>
+          <image src='{{item.teacher.logo}}' style='width:100rpx;height:100rpx;border-radius:50%;'></image>
+          <view class='text'>
+            <view style='color:#333333;font-weight:bold;'>{{item.teacher.realname}}</view>
+            <view style='font-size:28rpx;color:#666666'>{{item.create_time}}</view>
+          </view>
+          <view class='follow' style="background:{{item.teacher.myfellow==0?'#4e96d9':'#CDCDCD'}};" bindtap='follow' data-index="{{index}}">{{item.teacher.myfellow==0?'关注':'取消关注'}}</view>
+        </view>
+        <navigator url='../detail/detail?id={{item.id}}'>
+          <view class='title'>{{item.title}}</view>
+          <view class='description'>{{item.description!=''?item.description:'暂无简介'}}</view>
+        </navigator>
+        <view class='count'>
+          <image src='../../../images/10.png' mode='widthFix'></image>
+          <view>{{item.view}}</view>
+          <image src='../../../images/11.png' mode='widthFix'></image>
+          <view>{{item.comment}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

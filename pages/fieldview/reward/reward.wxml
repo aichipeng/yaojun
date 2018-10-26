@@ -1,0 +1,20 @@
+<!--pages/fieldview/reward/reward.wxml-->
+<view class='reward'>
+  <view class='info'>
+    <image src='{{info.teacher.logo}}'></image>
+    <view>{{info.teacher.realname}}</view>
+    <view>喜欢就赏个小红包吧~~</view>
+  </view>
+  <view class='money-list'>
+    <block wx:for="{{moneyList}}" wx:key="{{index}}">
+      <view class='item'>
+        <text style="border-color:{{money==item?'#4E96D9':'#999'}};color:{{money==item?'#4E96D9':'#999'}}" bindtap='changeMoney' data-m="{{item}}">{{item}}元</text>
+      </view>
+    </block>
+  </view>
+  <view class='other'>
+    <view bindtap='getInput'>其他金额</view>
+    <input type='digit' placeholder='输入金额' wx:if="{{getInput}}" bindinput='setMoney'></input>
+  </view>
+  <view class='gopay' bindtap='gopay'>确认支付</view>
+</view>

@@ -1,0 +1,279 @@
+/* pages/detail/detail.wxss */
+
+/* @import "../../wxParse/wxParse.wxss"; */
+
+.course-detail {
+  font-size: 35rpx;
+}
+
+.course-detail .info {
+  padding: 20rpx;
+}
+
+.course-detail .content {
+  padding-top: 20rpx;
+  border-top: solid 10rpx #f2f2f2;
+}
+
+.content .menu {
+  display: flex;
+}
+
+.menu .op {
+  flex: 1;
+  text-align: center;
+  color: #666;
+}
+
+.op .act {
+  content: '';
+  margin: 8rpx auto 0;
+  display: block;
+  width: 12rpx;
+  height: 12rpx;
+  background: #4e96d9;
+  border-radius: 50%;
+}
+
+.course-detail .modle {
+  padding: 20rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.modle .introduce {
+}
+
+.introduce .titlebar {
+  color: #333;
+  font-weight: bold;
+  padding: 20rpx 0;
+}
+
+.introduce .describe {
+  overflow: hidden;
+  padding: 0 20rpx;
+}
+
+.introduce .more {
+  text-align: right;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.more.open text::after {
+  content: "";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-bottom: solid #666 1rpx;
+  border-right: solid #666 1rpx;
+  transform: rotate(45deg) translateY(-5rpx);
+  margin-left: 10rpx;
+}
+
+.more.close text::after {
+  content: "";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-top: solid #666 1rpx;
+  border-left: solid #666 1rpx;
+  transform: rotate(45deg) translateY(5rpx);
+  margin-left: 20rpx;
+}
+
+.modle .catalog {
+}
+
+.catalog .chapter {
+  display: flex;
+  padding: 20rpx;
+}
+
+.chapter .title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modle .comment {
+  padding: 0 20rpx;
+  padding-bottom: 100rpx;
+  font-size: 30rpx;
+}
+
+.comment .titlebar {
+  color: #333;
+  font-weight: bold;
+}
+
+.comment .part {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.part image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  display: block;
+}
+
+.comment .text {
+  flex: 1;
+  width: 10%;
+  font-size: 30rpx;
+  color: #333;
+  padding: 5rpx 0 20rpx;
+  border-bottom: solid #f2f2f2 1rpx;
+}
+
+.text .content {
+  padding: 15rpx 0;
+  color: #666;
+  border: none;
+  word-break:break-all;
+}
+
+.text .reply {
+  background: #f2f2f2;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.reply .name {
+  color: #4e96d9;
+}
+
+.text image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.comment .tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2rpx 2rpx #eee;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.tabbar image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+  display: block;
+}
+
+.collection image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tabbar input {
+  margin-left: 20rpx;
+}
+
+.tabbar .release {
+  background: #f2f2f2;
+  border-radius: 50rpx;
+  padding: 10rpx 40rpx 10rpx 10rpx;
+}
+
+.course-detail  .navbtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-top: solid 1rpx #f2f2f2;
+  text-align: center;
+  color: #666;
+}
+
+.navbtn .nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .navbtn .nav:nth-child(1) {
+  border-right: dashed 1rpx #666;
+} */
+
+.navbtn .nav:nth-child(2) {
+  background: #4e96d9;
+  color: white;
+  align-self: stretch;
+}
+
+.nav image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+
+.mark {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.2;
+  z-index: 99;
+}
+
+.reply_popup {
+  position: fixed;
+  padding: 30rpx 30rpx 20rpx;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  margin-left: -30rpx;
+  background: white;
+  border-radius: 20rpx;
+  z-index: 199;
+  font-size: 30rpx;
+}
+
+.reply_popup textarea {
+  height: 110rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rpx 20rpx;
+  border: solid 1rpx #f2f2f2;
+}
+
+.reply_popup .reply {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.reply_popup text {
+  padding: 5rpx 20rpx;
+  background: #4e96d9;
+  color: white;
+  border-radius: 10rpx;
+}

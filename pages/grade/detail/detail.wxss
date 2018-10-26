@@ -1,0 +1,216 @@
+/* pages/grade/detail/detail.wxss */
+
+.grade_detail {
+  font-size: 35rpx;
+}
+
+.grade_detail .grade_info {
+  display: flex;
+  padding: 30rpx;
+  border-bottom: solid 15rpx #f2f2f2;
+  align-items: stretch;
+}
+
+.grade_info image {
+  width: 260rpx;
+  height: 190rpx;
+  margin-right: 30rpx;
+  display: block;
+}
+
+.grade_info .text {
+  flex: 1;
+}
+
+.text .count {
+  font-size: 25rpx;
+  color: #666;
+  padding: 8rpx 0;
+}
+
+.text .describe {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #666;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.spot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin: 10rpx auto;
+  background: #4e96d9;
+}
+
+.grade_detail .member_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  font-size: 30rpx;
+  color: #666;
+  border-bottom: solid 1rpx #f2f2f2;
+}
+
+.member_info .headmaster {
+  display: flex;
+  align-items: center;
+}
+
+.headmaster image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.headmaster .text {
+  flex: 1;
+}
+
+.text .sign {
+  font-size: 25rpx;
+  color: #4e96d9;
+  background: #d0e8ff;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+}
+
+.grade_detail .notice {
+  padding: 20rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.notice swiper, .nothing {
+  height: 60rpx;
+  line-height: 60rpx;
+  flex: 1;
+  font-size: 30rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+
+.notice swiper-item {
+}
+
+.grade_detail .tab {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  padding: 30rpx 0;
+  border-top: solid 15rpx #f2f2f2;
+}
+
+.tab .part {
+  flex: 1;
+}
+
+.grade_detail .content {
+  padding: 0 15rpx;
+}
+
+.content .course {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course .part {
+  width: 30.33%;
+  padding: 1.5%;
+}
+
+.course image {
+  width: 100%;
+  height: 150rpx;
+  display: block;
+}
+
+.content .ware {
+  padding: 0 30rpx;
+}
+
+.ware .part {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 5rpx 5rpx 5rpx #f2f2f2;
+  margin-bottom: 30rpx;
+}
+
+.ware image {
+  width: 180rpx;
+  height: 180rpx;
+  display: block;
+  border-radius: 15rpx;
+}
+
+.ware .text {
+  width: 70%;
+  position: relative;
+  margin-left: 20rpx;
+}
+
+.text .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 10rpx;
+  border-top: solid 1rpx #f2f2f2;
+  font-size: 30rpx;
+}
+
+.ware .download {
+  color: #4e96d9;
+  float: right;
+}
+
+.content .introduction {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.onerow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.titlebar image {
+  margin-right: 10rpx;
+}
+
+.flex-stretch {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx;
+}
+
+.flex-stretch image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin: auto 0;
+  margin-right: 30rpx;
+  display: block;
+}
+
+.flex-stretch .text {
+  flex: 1;
+  width: 10%;
+}

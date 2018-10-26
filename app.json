@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/detail/detail",
+    "pages/list/list",
+    "pages/lecturer/list/list",
+    "pages/lecturer/detail/detail",
+    "pages/member/index",
+    "pages/rubclass/index/index",
+    "pages/rubclass/detail/detail",
+    "pages/fieldview/list/list",
+    "pages/fieldview/detail/detail",
+    "pages/video/video",
+    "pages/lecturer/order/order",
+    "pages/buy/buy",
+    "pages/member/logs/logs",
+    "pages/member/userinfo/userinfo",
+    "pages/grade/list/list",
+    "pages/grade/detail/detail",
+    "pages/member/studycentre/index",
+    "pages/social/index/index",
+    "pages/member/order/list/list",
+    "pages/release/release",
+    "pages/searchcenter/search",
+    "pages/member/collection/collection",
+    "pages/member/follow/follow",
+    "pages/member/appointment/appointment",
+    "pages/social/list/list",
+    "pages/fieldview/reward/reward"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "尧君教育",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#4E96D9",
+    "color": "#666666",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home_1.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "分类",
+        "iconPath": "images/category_1.png",
+        "selectedIconPath": "images/category.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "商城",
+        "iconPath": "images/mall_1.png",
+        "selectedIconPath": "images/mall.png"
+      },
+      {
+        "pagePath": "pages/grade/list/list",
+        "text": "圈子",
+        "iconPath": "images/circle_1.png",
+        "selectedIconPath": "images/circle.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "我的",
+        "iconPath": "images/person_1.png",
+        "selectedIconPath": "images/person.png"
+      }
+    ]
+  }
+}

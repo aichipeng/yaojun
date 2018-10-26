@@ -1,0 +1,82 @@
+<!--pages/fieldView/detail/detail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='fieldView_detail'>
+  <view class='info'>
+    <view class='article_info'>
+      <view class='title'>{{info.title}}</view>
+      <view class='flex-center count'>
+        <view class='flex_1'>{{info.create_time}}</view>
+        <view class='flex-center'>
+          <image src='../../../images/10.png' mode='aspectFit'></image>
+          <text>{{info.view}}</text>
+        </view>
+        <view class='flex-center'>
+          <image src='../../../images/11.png' mode='aspectFit'></image>{{info.comment}}</view>
+      </view>
+    </view>
+    <view class='author_info flex-center'>
+      <view>
+        <image src='{{info.teacher.logo}}'></image>
+      </view>
+      <view>
+        <view>{{info.teacher.realname}}</view>
+        <view class='addr'>发起地 | {{info.teacher.area_id}}</view>
+      </view>
+    </view>
+    <view class='article_content'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      <view class='praise'>
+        <view class='line-row'></view>
+        <view class='cont'>
+          <navigator url='../reward/reward?id={{info.id}}'>赞赏支持</navigator>
+        </view>
+        <view>{{info.like}}人赞赏</view>
+      </view>
+    </view>
+  </view>
+  <view class='comment'>
+    <view class='titlebar'>全部评价</view>
+    <block wx:for="{{comment.common}}" wx:key="{{index}}">
+      <view class='part'>
+        <view class=''>
+          <image src='{{item.avatar}}'></image>
+        </view>
+        <view class='text'>
+          <view class='flex-center'>
+            <view class='flex_1'>{{item.realname}}</view>
+            <!-- <image src='../../../images/praise.png' mode='aspectFit'></image>
+            <view style='color:#999;'>赞</view> -->
+          </view>
+          <view class='content' bindtap='showPopup' data-pid="{{item.id}}">{{item.content}}</view>
+          <view class='reply' wx:if="{{item.children&&item.children!=''}}">
+            <block wx:for="{{item.children}}" wx:key="{{index}}" wx:for-item='val'>
+              <view>
+                <text class='name'>{{val.realname}}<text wx:if="{{val.realname!=val.username}}">回复</text>：</text>
+                <text bindtap='showPopup' data-pid="{{val.pid}}" data-p_pid="{{val.id}}">{{val.content}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+     <view wx:if="{{comment.common==''}}" style='padding:40rpx;text-align:center;'>暂无评价</view>
+  </view>
+</view>
+<view class='tabbar flex-center'>
+  <view class='release flex_1 flex-center'>
+    <image src='../../../images/1.png' mode='aspectFit'></image>
+    <input placeholder='发布评论...' class='flex_1' bindconfirm='addcommit' value='{{commit}}' cursor-spacing="20"></input>
+  </view>
+  <view class='collection' bindtap='collect'>
+    <image src="../../../images/12{{mycollection==0?'':'_1'}}.png" mode='aspectFit'></image>
+  </view>
+</view>
+
+<!-- 回复弹窗 -->
+<view class='mark' bindtap='hidepopup' wx:if="{{reply==true}}" bindtap='hidePopup'></view>
+<view class='reply_popup' wx:if="{{reply==true}}">
+  <textarea placeholder='回复...' bindinput="setcommit" fixed='true'  cursor-spacing='100'  ></textarea>
+  <view class='reply'>
+    <text bindtap='addcommit' data-pid="{{pid}}" data-p_pid="{{p_pid}}">回复</text>
+  </view>
+</view>

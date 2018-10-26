@@ -1,0 +1,87 @@
+/* pages/lecturer/list/list.wxss */
+
+.lecturer_list {
+  font-size: 35rpx;
+}
+
+.lecturer_list .header {
+  padding: 20rpx;
+}
+
+.header scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+
+scroll-view picker {
+  padding: 20rpx;
+  display: inline-block;
+}
+
+.header .startype {
+  padding: 0 20rpx;
+}
+
+.startype text {
+  padding: 5rpx 20rpx;
+  margin-right: 20rpx;
+}
+
+.lecturer_list .content {
+  padding: 30rpx;
+  border-top: solid 1rpx #f3f3f3;
+  font-size: 30rpx;
+}
+
+.lecturer_list .op {
+  padding: 20rpx;
+  border: solid 1rpx #f3f3f3;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.op .info {
+  padding-bottom: 30rpx;
+  color: #666;
+}
+
+.info .img {
+  float: left;
+  width: 240rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+.info .text {
+  height: 180rpx;
+  position: relative;
+}
+.text .territory {
+  position: absolute;
+  bottom: 0;
+  left: 260rpx;
+  right: 0;
+}
+.op .count {
+  padding-top: 20rpx;
+  border-top: solid 1rpx #f3f3f3;
+  color: #666;
+}
+
+.count text {
+  margin-right: 50rpx;
+}
+
+.count .follow {
+  float: right;
+  padding: 0 20rpx;
+  background: #4e96d9;
+  color: white;
+  border-radius: 50rpx;
+  margin-right: 0;
+}
+
+.onerow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
